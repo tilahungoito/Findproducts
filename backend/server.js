@@ -17,7 +17,12 @@ const __dirname = path.resolve();
 connectDB();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: ['https://findproducts-2.onrender.com'], // Allow only your frontend domain
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],      // Specify allowed methods
+    credentials: true                               // Include credentials if needed (e.g., cookies)
+}));
+//app.use(cors());
 app.use(express.json());
 app.use(passport.initialize()); // Initialize Passport
 
