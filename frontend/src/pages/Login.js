@@ -17,7 +17,7 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const endpoint = form.isSignup ? 'http://localhost:5000/api/users/signup' : 'http://localhost:5000/api/users/login';
+        const endpoint = form.isSignup ? 'https://backend-3lua.onrender.com/api/users/signup' : 'https://backend-3lua.onrender.com/api/users/login';
         try {
             const { data } = await axios.post(endpoint, {
                 email: form.email,
@@ -32,7 +32,7 @@ const Login = () => {
     };
 
     const handleGoogleLogin = () => {
-        window.location.href = 'http://localhost:5000/api/users/auth/google'; // Ensure correct backend route // Redirect to Google OAuth route
+        window.location.href = 'https://backend-3lua.onrender.com/api/users/auth/google'; // Ensure correct backend route // Redirect to Google OAuth route
     };
 
     return (
