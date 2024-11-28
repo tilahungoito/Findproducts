@@ -11,7 +11,7 @@ const CreateProduct = () => {
     // Helper function to refresh the token
     async function refreshToken() {
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/refresh', null, {
+            const response = await axios.post('https://backend-3lua.onrender.com/api/auth/refresh', null, {
                 withCredentials: true, // Ensure cookies are sent if using refresh tokens in cookies
             });
             const newToken = response.data.token; // Assuming the response contains the new JWT
@@ -38,7 +38,7 @@ const CreateProduct = () => {
 
         try {
             const response = await axios.post(
-                'http://localhost:5000/api/products',
+                'https://backend-3lua.onrender.com/api/products',
                 productData,
                 {
                     headers: {
@@ -59,7 +59,7 @@ const CreateProduct = () => {
                         // Retry the request with the new token
                         try {
                             const retryResponse = await axios.post(
-                                'http://localhost:5000/api/products',
+                                'https://backend-3lua.onrender.com/api/products',
                                 productData,
                                 {
                                     headers: {
