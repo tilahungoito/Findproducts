@@ -19,7 +19,7 @@ const Home = () => {
 
     useEffect(() => {
         const fetchProducts = async () => {
-            const response = await axios.get('http://localhost:5000/api/products');
+            const response = await axios.get('https://backend-3lua.onrender.com/api/products');
             setProducts(response.data);
             setFilteredProducts(response.data); // Set the initial filtered products to all products
         };
@@ -48,7 +48,7 @@ const Home = () => {
 
         try {
             const response = await axios.delete(
-                `http://localhost:5000/api/products/${id}`,
+                `https://backend-3lua.onrender.com/api/products/${id}`,
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`
@@ -72,7 +72,7 @@ const Home = () => {
 
         try {
             const response = await axios.put(
-                `http://localhost:5000/api/products/${updatedProduct._id}`,
+                `https://backend-3lua.onrender.com/api/products/${updatedProduct._id}`,
                 updatedProduct,
                 {
                     headers: {
