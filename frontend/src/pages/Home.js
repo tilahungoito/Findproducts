@@ -21,7 +21,7 @@ const Home = () => {
         const fetchProducts = async () => {
             const response = await axios.get('https://backend-3lua.onrender.com/api/products');
             setProducts(response.data);
-            setFilteredProducts(response.data); // Set the initial filtered products to all products
+            setFilteredProducts(response.data); // https://backend-3lua.onrender.com
         };
         fetchProducts();
     }, []);
